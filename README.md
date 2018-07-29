@@ -1,35 +1,57 @@
-![cf](http://i.imgur.com/7v5ASc8.png) 33: Sorting Algorithms
-===
+# LAB 34 SORTING ALGORITHMS
 
-## Submission Instructions
-  * **If you do not include links in your README to online resources you utilized, OR you do not comment your code, you will get a 0.**
-  * Work in a fork of this repository
-  * Work in a branch on your fork called `lab-33`
-  * Submit a pull request to your repository
-  * Submit a link to your pull request on canvas
-  * Set up Travis CI and update your repo to utilize the [Travis CI Github app](https://github.com/marketplace/travis-ci). *Use the free instsallation.*
-  * Submit a question, observation, and how long you spent on Canvas  
+[![Build Status](https://travis-ci.org/LizabethPetersen/33-sorting-algorithms.svg?branch=master)](https://travis-ci.org/LizabethPetersen/33-sorting-algorithms)
 
-## Requirements  
-#### Configuration  
-* Refer to the [backend lab scaffold template](https://github.com/codefellows/seattle-javascript-401d25/tree/master/00-BACKEND-lab-scaffold-template).
+## DOCUMENTATION
+I chose these particular sorting algorithms because they either intrigued me to dig in further or because we did not look at them in class.
 
-#### Feature Tasks 
-* Research and implement three sorting algorithms in Javascript. Refer to [the Wikipedia page](https://en.wikipedia.org/wiki/Sorting_algorithm) on various algorithms
-   * There are LOTS of resources out there in Javascript about these topics. One of the great ones is [Visual Algo](https://visualgo.net/bn/sorting) for visualizations of how the algorithm works. 
-   * You should definitely rely on these resources, **BUT DO NOT BLATANTLY COPY/PASTE CODE THAT YOU FIND ONLINE**
-   * Write comments in your code on what each line is doing so it is clear you made a concerted effort you tried to understand it
+## Primary Source
+http://blog.benoitvallon.com/category/sorting-algorithms-in-javascript/
 
-#### Tests
-* Write three test assertions for each sorting algorithm 
- 
-#### Documentation
-Add your Travis badge to the top of your README (even if your build is failing), and include the following information for each algorithm:
-  * The name of your sorting algorithm
-  * The Big Oh space and run time complexity of your algorithm
-  * Whether the algorithm is stable or unstable
-  * A good use case for when this is the preferred algorithm to use over others, if applicable
-  * Links to sources you used to research the algorithms
-  
-### Stretch Goal
-* Take one of the sorting algorithms you wrote and utilize it to sort the data in your React-Redux budget tracker app according to the cost of your expenses. 
+### Shellsort Algorithm
+http://blog.benoitvallon.com/sorting-algorithms-in-javascript/the-shellsort-algorithm/
+https://en.wikipedia.org/wiki/Shellsort
+https://hbfs.wordpress.com/2011/03/01/shellsort/
+
+Based on the name of this algorithm, I wanted to see if this had anything to do with the classic "shell game". Instead, I learned it is named after Donald Shell, who published this sorting method in 1959. By definition, this is more of a generalized way to do an insertion sort or bubble sort. 
+
+Shellsort is an in-place sorting method that replaces values based on gaps in the sequence. Gaps are what determine how the sort will be determined. The math on these sequences are more than I can grasp, having not gone beyond algebra in college (and basic geometry in high school, a long time ago). Shellsort is an unstable sorting method, and one that performs best when data is already somewhat sorted. 
+
+###### Time Complexity: 
+  - Worst case: O(n^2). Best of worse case: O(n log^2 n). Dependent upon the gap sequence.
+  - Best case: O(n log n)
+
+###### Space Complexity: 
+  - Worst case: O(n). total (I am unsure why) 
+  - Best case: O(1). In-place sorting method
+
+
+### Quicksort Algorithm
+http://blog.benoitvallon.com/sorting-algorithms-in-javascript/the-quicksort-algorithm/
+https://en.wikipedia.org/wiki/Quicksort
+
+Quicksort seems straightforward: it is a "divide and conquer" method for sorting. It takes the elements in an array and divides them into smallest and largest numbers (similar to how a binary search tree utilizes methods for sorting based on what is contained in the left and right nodes). This is not a stable sort form. It is, however, one of the faster implementations in time and space complexity. We can use recursion methods for implementing quicksort. 
+
+Fun fact: **qsort** in Java is a reference to quicksort, because it is a subroutine in the C language library.
+
+###### Time Complexity:
+- Worst case: O(n^2)
+- Best case: O(n)
+
+###### Space Complexity:
+- Worst case: O(n)
+- Best case:  O(log n)
+
+### Merge Sort
+http://blog.benoitvallon.com/sorting-algorithms-in-javascript/the-merge-sort-algorithm/
+https://medium.com/basecs/making-sense-of-merge-sort-part-1-49649a143478
+https://en.wikipedia.org/wiki/Merge_sort
+
+Merge sorts are another form of divide and conquer sorting. They can be implemented recursively, using a top down or bottom up method. There are variants on mergesort which attempt to reduce the space complexity; we will not be working with these today.
+
+###### Time Complexity:
+- Typical/average case: O(n log n)
+
+###### Space Complexity:
+- Worst case: O(n) with O(n) auxilliary
+- Best case: O(n) with O(1) using auxilliary linked lists
