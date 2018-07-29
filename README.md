@@ -55,6 +55,3 @@ Merge sorts are another form of divide and conquer sorting. They can be implemen
 ###### Space Complexity:
 - Worst case: O(n) with O(n) auxilliary
 - Best case: O(n) with O(1) using auxilliary linked lists
-
-
-**Note:** I forgot to make a separate branch until after I'd done all the coding, which is why I am updating my README. I wanted to make note of the fact that there will be only two commits for the one pull request.
